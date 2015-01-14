@@ -2,6 +2,8 @@
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
+using FolderToCloud.DataClasses;
+using FolderToCloud.Properties;
 
 namespace FolderToCloud.Helpers
 {
@@ -23,6 +25,38 @@ namespace FolderToCloud.Helpers
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
                 xmlSerializer.Serialize(stringWriter, obj);
                 return stringWriter.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Executes commands needed to make a link.
+        /// </summary>
+        /// <param name="link">The link.</param>
+        /// <param name="shouldMoveBeDone">Boolean that decides whether a move of the local folder has to be done.</param>
+        public static void ExecuteLinkCommands(Link link, bool shouldMoveBeDone)
+        {
+            if (shouldMoveBeDone)
+            {
+                //Rename the local path to make the Link creation possible
+                Directory.Move(link.LocalPath, link.ModifiedLocalPath);
+            }
+            else
+            {
+                Directory.Delete(link.LocalPath);
+            }
+
+            //Create the link
+            string command = string.Format(Resources.mkLinkCommand, link.LocalPath, link.CloudPath);
+            System.Diagnostics.Process.Start(Resources.CmdProcessName, command);
+
+            if (shouldMoveBeDone)
+            {
+                //Move content of the modified Path to the Cloudpath
+                if (CopyFolderContents(link.ModifiedLocalPath, link.CloudPath))
+                {
+                    //Remove the modified folder.
+                    Directory.Delete(link.ModifiedLocalPath, true);
+                }
             }
         }
 

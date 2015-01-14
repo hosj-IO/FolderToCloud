@@ -129,4 +129,16 @@
   <data name="mkLinkCommand" xml:space="preserve">
     <value>/C mklink /J "{0}" "{1}"</value>
   </data>
+  <data name="FormAdd_FormAdd_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="FormAdd_FormAdd_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="FormAdd_Add_Name" xml:space="preserve">
+    <value>Add a new link</value>
+  </data>
+  <data name="FormAdd_Edit_Name" xml:space="preserve">
+    <value>Edit the link {0}</value>
+  </data>
 </root>

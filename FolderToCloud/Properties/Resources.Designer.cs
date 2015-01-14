@@ -88,6 +88,42 @@ namespace FolderToCloud.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add a new link.
+        /// </summary>
+        internal static string FormAdd_Add_Name {
+            get {
+                return ResourceManager.GetString("FormAdd_Add_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit the link {0}.
+        /// </summary>
+        internal static string FormAdd_Edit_Name {
+            get {
+                return ResourceManager.GetString("FormAdd_Edit_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        internal static string FormAdd_FormAdd_Add {
+            get {
+                return ResourceManager.GetString("FormAdd_FormAdd_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        internal static string FormAdd_FormAdd_Edit {
+            get {
+                return ResourceManager.GetString("FormAdd_FormAdd_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /C mklink /J &quot;{0}&quot; &quot;{1}&quot;.
         /// </summary>
         internal static string mkLinkCommand {
