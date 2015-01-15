@@ -55,5 +55,17 @@ namespace FolderToCloud.Helpers
             links.Remove(link);
             WriteLinksToFile(links);
         }
+
+        /// <summary>
+        /// Removes the link.
+        /// </summary>
+        /// <param name="link">The link.</param>
+        /// <param name="links">Link Collection</param>
+        public static void RemoveLink(Link link, List<Link> links)
+        {
+            Directory.Delete(link.LocalPath);
+            RemoveLinkFromFile(link, links);
+
+        }
     }
 }

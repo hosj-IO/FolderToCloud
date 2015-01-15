@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using FolderToCloud.DataClasses;
@@ -43,8 +42,7 @@ namespace FolderToCloud.UserInterface
                 switch (radioButtons[0].Name)
                 {
                     case "radioButtonRemoveLocal":
-                        Directory.Delete(_link.LocalPath);
-                        Helpers.FileUtils.RemoveLinkFromFile(_link, _links);
+                        Helpers.FileUtils.RemoveLink(_link,_links);
                         DialogResult = DialogResult.OK;
                         break;
                     case "radioButtonRemoveCloud":
