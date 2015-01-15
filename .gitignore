@@ -39,5 +39,4 @@ deploy/*
  
 *.svn
 .svn
-FolderToCloud.sln
-FolderToCloud.sln.GhostDoc.xml
+*.sln.GhostDoc.xml
