@@ -95,6 +95,16 @@ namespace FolderToCloud.UserInterface
         private void LoadLinksInListBox()
         {
             listBoxOverview.DataSource = _links;
+            if (_links.Count < 1)
+            {
+                buttonEdit.Enabled = false;
+                buttonDelete.Enabled = false;
+            }
+            else
+            {
+                buttonEdit.Enabled = true;
+                buttonDelete.Enabled = true;
+            }
         }
 
         #endregion
