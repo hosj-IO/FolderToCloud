@@ -141,4 +141,28 @@
   <data name="FormAdd_Edit_Name" xml:space="preserve">
     <value>Edit the link {0}</value>
   </data>
+  <data name="FormMain_buttonDelete_Click_Please_select_a_link_to_delete_" xml:space="preserve">
+    <value>Please select a link to delete.</value>
+  </data>
+  <data name="FormMain_buttonDelete_Click_No_link_selected_" xml:space="preserve">
+    <value>No link selected!</value>
+  </data>
+  <data name="FormAdd_buttonAdd_Click_Linked_Folder_cannot_be_parents_childs_of_each_other_" xml:space="preserve">
+    <value>Linked Folder cannot be parents/childs of each other.</value>
+  </data>
+  <data name="FormAdd_buttonAdd_Click_Validation_error_" xml:space="preserve">
+    <value>Validation error.</value>
+  </data>
+  <data name="FormAdd_buttonAdd_Click_The_new_local_path_is_not_empty__do_you_wish_that_the_content_is_moved_" xml:space="preserve">
+    <value>The new local path is not empty, do you wish that the content is moved?</value>
+  </data>
+  <data name="FormAdd_buttonAdd_Click_Local_path_not_empty" xml:space="preserve">
+    <value>Local path not empty</value>
+  </data>
+  <data name="FormAdd_buttonAdd_Click_The_link_does_not_appear_to_be_a_link__try_manually_deleting_the_link_" xml:space="preserve">
+    <value>The link does not appear to be a link, try manually deleting the link.</value>
+  </data>
+  <data name="FormAdd_buttonAdd_Click_Error_removing_link" xml:space="preserve">
+    <value>Error removing link</value>
+  </data>
 </root>

@@ -65,6 +65,7 @@ namespace FolderToCloud.Helpers
         {
             Directory.Delete(link.LocalPath);
             RemoveLinkFromFile(link, links);
+
         }
     }
 }

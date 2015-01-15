@@ -50,7 +50,6 @@ namespace FolderToCloud.DataClasses
                 _localPath = value;
                 //Set ModifiedLocalPath
                 //TODO move this to modifiedLocalPath
-                //TODO add multiple checks to confirm path we are working with. E.g. trying to get the parent of C:\ ...
                 string directoryName = new DirectoryInfo(value).Name;
                 string parentPath = Directory.GetParent(value).FullName;
                 ModifiedLocalPath = parentPath + "\\_" + directoryName;

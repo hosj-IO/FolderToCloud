@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using FolderToCloud.DataClasses;
+using FolderToCloud.Properties;
 
 namespace FolderToCloud.UserInterface
 {
@@ -44,26 +45,46 @@ namespace FolderToCloud.UserInterface
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             Link selectedLink = listBoxOverview.SelectedItem as Link;
-            using (FormDelete formDelete = new FormDelete(selectedLink, _links))
+            if (selectedLink != null)
             {
-                DialogResult result = formDelete.ShowDialog();
-                if (result != DialogResult.OK)
+                using (FormDelete formDelete = new FormDelete(selectedLink, _links))
                 {
-                    //TODO improve message
-                    MessageBox.Show("Something went wrong during the delete.");
+                    DialogResult result = formDelete.ShowDialog();
+                    if (result != DialogResult.OK)
+                    {
+                        //TODO improve message
+                        MessageBox.Show("Delete was not possible, try manually");
+                    }
                 }
+                _links = Helpers.FileUtils.RetrieveLinksFromFile();
+                LoadLinksInListBox();
             }
-            _links = Helpers.FileUtils.RetrieveLinksFromFile();
-            LoadLinksInListBox();
+            else
+            {
+                MessageBox.Show(Resources.FormMain_buttonDelete_Click_Please_select_a_link_to_delete_,
+                                Resources.FormMain_buttonDelete_Click_No_link_selected_, MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             Link selectedLink = listBoxOverview.SelectedItem as Link;
-            using (FormAdd formAdd = new FormAdd(selectedLink, _links))
+            if (selectedLink != null)
             {
-                formAdd.ShowDialog();
+                using (FormAdd formAdd = new FormAdd(selectedLink, _links))
+                {
+                    formAdd.ShowDialog();
+                }
             }
+            else
+            {
+                MessageBox.Show(Resources.FormMain_buttonDelete_Click_Please_select_a_link_to_delete_,
+                                Resources.FormMain_buttonDelete_Click_No_link_selected_, MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+            _links = Helpers.FileUtils.RetrieveLinksFromFile();
+            LoadLinksInListBox();
         }
         #endregion
 
