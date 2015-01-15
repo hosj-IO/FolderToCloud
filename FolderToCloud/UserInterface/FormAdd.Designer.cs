@@ -50,6 +50,7 @@
             // 
             // textBoxLocal
             // 
+            this.textBoxLocal.AllowDrop = true;
             this.textBoxLocal.Location = new System.Drawing.Point(77, 6);
             this.textBoxLocal.Name = "textBoxLocal";
             this.textBoxLocal.Size = new System.Drawing.Size(374, 20);
@@ -75,6 +76,7 @@
             // 
             // textBoxCloud
             // 
+            this.textBoxCloud.AllowDrop = true;
             this.textBoxCloud.Location = new System.Drawing.Point(77, 32);
             this.textBoxCloud.Name = "textBoxCloud";
             this.textBoxCloud.Size = new System.Drawing.Size(374, 20);

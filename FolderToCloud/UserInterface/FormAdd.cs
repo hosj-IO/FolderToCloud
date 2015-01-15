@@ -10,7 +10,7 @@ namespace FolderToCloud.UserInterface
     public partial class FormAdd : Form
     {
         #region private properties
-        private string _localPath, _cloudPath;
+        private string _localPath, _cloudPath, dragPath;
         private List<Link> _links;
         #endregion
 
@@ -130,7 +130,7 @@ namespace FolderToCloud.UserInterface
                             }
                             else
                             {
-                               return;
+                                return;
                             }
                         }
                     }
@@ -200,6 +200,13 @@ namespace FolderToCloud.UserInterface
 
             textBoxCloud.TextChanged += textBox_TextChanged;
             textBoxLocal.TextChanged += textBox_TextChanged;
+
+            textBoxCloud.DragEnter += textBox_DragEnter;
+            textBoxLocal.DragEnter += textBox_DragEnter;
+
+            textBoxCloud.DragDrop += textBox_DragDrop;
+            textBoxLocal.DragDrop += textBox_DragDrop;
+
         }
 
         /// <summary>
@@ -212,5 +219,29 @@ namespace FolderToCloud.UserInterface
             buttonBrowseCloud.Enabled = isEnabled;
         }
         #endregion
+
+
+        private void textBox_DragDrop(object sender, DragEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(dragPath))
+            {
+                ((TextBox)sender).Text = dragPath;
+            }
+            dragPath = null;
+        }
+
+        private void textBox_DragEnter(object sender, DragEventArgs e)
+        {
+            DragDropEffects effect = DragDropEffects.None;
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                dragPath = ((string[])e.Data.GetData(DataFormats.FileDrop))[0];
+                if (Directory.Exists(dragPath))
+                    effect = DragDropEffects.Copy;
+            }
+
+            e.Effect = effect;
+
+        }
     }
 }
