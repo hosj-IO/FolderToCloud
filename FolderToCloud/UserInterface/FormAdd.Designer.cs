@@ -78,14 +78,14 @@
             this.textBoxCloud.Location = new System.Drawing.Point(77, 32);
             this.textBoxCloud.Name = "textBoxCloud";
             this.textBoxCloud.Size = new System.Drawing.Size(374, 20);
-            this.textBoxCloud.TabIndex = 4;
+            this.textBoxCloud.TabIndex = 3;
             // 
             // buttonCancel
             // 
             this.buttonCancel.Location = new System.Drawing.Point(376, 58);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 5;
+            this.buttonCancel.TabIndex = 6;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
@@ -95,7 +95,7 @@
             this.buttonAdd.Location = new System.Drawing.Point(295, 58);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdd.TabIndex = 6;
+            this.buttonAdd.TabIndex = 5;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
@@ -105,7 +105,7 @@
             this.buttonBrowseCloud.Location = new System.Drawing.Point(457, 31);
             this.buttonBrowseCloud.Name = "buttonBrowseCloud";
             this.buttonBrowseCloud.Size = new System.Drawing.Size(75, 20);
-            this.buttonBrowseCloud.TabIndex = 8;
+            this.buttonBrowseCloud.TabIndex = 4;
             this.buttonBrowseCloud.Text = "Browse";
             this.buttonBrowseCloud.UseVisualStyleBackColor = true;
             // 

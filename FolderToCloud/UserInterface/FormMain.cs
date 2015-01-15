@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Windows.Forms;
 using FolderToCloud.DataClasses;
 using FolderToCloud.Properties;
@@ -33,21 +32,12 @@ namespace FolderToCloud.UserInterface
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            Link link = null;
+
             using (FormAdd formAdd = new FormAdd())
             {
-                DialogResult result = formAdd.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    link = formAdd.Link;
-                }
+                formAdd.ShowDialog();
             }
 
-            if (link != null)
-            {
-                Helpers.FileUtils.AppendLinkToFile(link, _links);
-                ExecuteLinkCommands(link);
-            }
             _links = Helpers.FileUtils.RetrieveLinksFromFile();
             LoadLinksInListBox();
         }
@@ -55,9 +45,43 @@ namespace FolderToCloud.UserInterface
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             Link selectedLink = listBoxOverview.SelectedItem as Link;
-            using (FormDelete formDelete = new FormDelete(selectedLink, _links))
+            if (selectedLink != null)
             {
-                DialogResult result = formDelete.ShowDialog();
+                using (FormDelete formDelete = new FormDelete(selectedLink, _links))
+                {
+                    DialogResult result = formDelete.ShowDialog();
+                    if (result != DialogResult.OK)
+                    {
+                        //TODO improve message
+                        MessageBox.Show("Delete was not possible, try manually");
+                    }
+                }
+                _links = Helpers.FileUtils.RetrieveLinksFromFile();
+                LoadLinksInListBox();
+            }
+            else
+            {
+                MessageBox.Show(Resources.FormMain_buttonDelete_Click_Please_select_a_link_to_delete_,
+                                Resources.FormMain_buttonDelete_Click_No_link_selected_, MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            Link selectedLink = listBoxOverview.SelectedItem as Link;
+            if (selectedLink != null)
+            {
+                using (FormAdd formAdd = new FormAdd(selectedLink, _links))
+                {
+                    formAdd.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show(Resources.FormMain_buttonDelete_Click_Please_select_a_link_to_delete_,
+                                Resources.FormMain_buttonDelete_Click_No_link_selected_, MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
             }
             _links = Helpers.FileUtils.RetrieveLinksFromFile();
             LoadLinksInListBox();
@@ -65,27 +89,15 @@ namespace FolderToCloud.UserInterface
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Loads the links in ListBox.
+        /// </summary>
         private void LoadLinksInListBox()
         {
             listBoxOverview.DataSource = _links;
         }
 
-        private void ExecuteLinkCommands(Link link)
-        {
-            //Rename the local path to make the Link creation possible
-            Directory.Move(link.LocalPath, link.ModifiedLocalPath);
-
-            //Create the link
-            string command = string.Format(Resources.mkLinkCommand, link.LocalPath, link.CloudPath);
-            System.Diagnostics.Process.Start(Resources.CmdProcessName, command);
-
-            //Move content of the modified Path to the Cloudpath
-            if (Helpers.Utils.CopyFolderContents(link.ModifiedLocalPath, link.CloudPath))
-            {
-                //Remove the modified folder.
-                Directory.Delete(link.ModifiedLocalPath, true);
-            }
-        }
         #endregion
+
     }
 }

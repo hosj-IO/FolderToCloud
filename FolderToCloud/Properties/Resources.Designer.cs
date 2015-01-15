@@ -88,6 +88,116 @@ namespace FolderToCloud.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add a new link.
+        /// </summary>
+        internal static string FormAdd_Add_Name {
+            get {
+                return ResourceManager.GetString("FormAdd_Add_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error removing link.
+        /// </summary>
+        internal static string FormAdd_buttonAdd_Click_Error_removing_link {
+            get {
+                return ResourceManager.GetString("FormAdd_buttonAdd_Click_Error_removing_link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Linked Folder cannot be parents/childs of each other..
+        /// </summary>
+        internal static string FormAdd_buttonAdd_Click_Linked_Folder_cannot_be_parents_childs_of_each_other_ {
+            get {
+                return ResourceManager.GetString("FormAdd_buttonAdd_Click_Linked_Folder_cannot_be_parents_childs_of_each_other_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Local path not empty.
+        /// </summary>
+        internal static string FormAdd_buttonAdd_Click_Local_path_not_empty {
+            get {
+                return ResourceManager.GetString("FormAdd_buttonAdd_Click_Local_path_not_empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The link does not appear to be a link, try manually deleting the link..
+        /// </summary>
+        internal static string FormAdd_buttonAdd_Click_The_link_does_not_appear_to_be_a_link__try_manually_deleting_the_link_ {
+            get {
+                return ResourceManager.GetString("FormAdd_buttonAdd_Click_The_link_does_not_appear_to_be_a_link__try_manually_delet" +
+                        "ing_the_link_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The new local path is not empty, do you wish that the content is moved?.
+        /// </summary>
+        internal static string FormAdd_buttonAdd_Click_The_new_local_path_is_not_empty__do_you_wish_that_the_content_is_moved_ {
+            get {
+                return ResourceManager.GetString("FormAdd_buttonAdd_Click_The_new_local_path_is_not_empty__do_you_wish_that_the_con" +
+                        "tent_is_moved_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validation error..
+        /// </summary>
+        internal static string FormAdd_buttonAdd_Click_Validation_error_ {
+            get {
+                return ResourceManager.GetString("FormAdd_buttonAdd_Click_Validation_error_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit the link {0}.
+        /// </summary>
+        internal static string FormAdd_Edit_Name {
+            get {
+                return ResourceManager.GetString("FormAdd_Edit_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        internal static string FormAdd_FormAdd_Add {
+            get {
+                return ResourceManager.GetString("FormAdd_FormAdd_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        internal static string FormAdd_FormAdd_Edit {
+            get {
+                return ResourceManager.GetString("FormAdd_FormAdd_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No link selected!.
+        /// </summary>
+        internal static string FormMain_buttonDelete_Click_No_link_selected_ {
+            get {
+                return ResourceManager.GetString("FormMain_buttonDelete_Click_No_link_selected_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select a link to delete..
+        /// </summary>
+        internal static string FormMain_buttonDelete_Click_Please_select_a_link_to_delete_ {
+            get {
+                return ResourceManager.GetString("FormMain_buttonDelete_Click_Please_select_a_link_to_delete_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /C mklink /J &quot;{0}&quot; &quot;{1}&quot;.
         /// </summary>
         internal static string mkLinkCommand {
