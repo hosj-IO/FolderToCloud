@@ -113,8 +113,10 @@
             // 
             // FormAdd
             // 
+            this.AcceptButton = this.buttonAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(570, 91);
             this.Controls.Add(this.buttonBrowseCloud);
             this.Controls.Add(this.buttonAdd);
