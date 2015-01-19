@@ -142,7 +142,7 @@ namespace FolderToCloud.Helpers
             string childPathFull = Path.GetFullPath(childPath).ToUpperInvariant();
             string parentPathFull = Path.GetFullPath(parentPath).ToUpperInvariant();
 
-            if (parentPathFull.StartsWith(childPathFull))
+            if (childPathFull.StartsWith(parentPathFull))
                 return true;
             return false;
         }
